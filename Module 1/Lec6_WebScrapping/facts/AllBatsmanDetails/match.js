@@ -45,7 +45,7 @@ function processHTML(html){
     for(let i=0 ; i<bothInnings.length ; i++){
         let oneInning = bothInnings[i];
         let teamName = ch(oneInning).find("h5").text().split(" INNINGS ")[0];
-        console.log(teamName);
+        console.log(`--------------- ${teamName} -------------`);
 
         let allTrs = ch(oneInning).find(".table.batsman tbody tr");
 
