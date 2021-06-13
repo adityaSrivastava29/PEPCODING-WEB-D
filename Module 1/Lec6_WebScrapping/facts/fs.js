@@ -13,6 +13,7 @@ let htmlKaData = fs.readFileSync("./index.html" , "utf8");
 //console.log(htmlKaData);
 // jquery
 let ch = cheerio.load(htmlKaData);
+//console.log(ch);
 
 // let pTagKaData = ch("p").text();
 // //<p>Hey this is a p tag !!</p>
@@ -20,8 +21,8 @@ let ch = cheerio.load(htmlKaData);
 // console.log(pTagKaData);
 
 //get all the matching p tags inside a tag
-//  let pTagInsideUl = ch("ul p").text();
-// console.log(pTagInsideUl)
+ let pTagInsideUl = ch("ul p").text();
+console.log(pTagInsideUl);
 
 
 //direct children
