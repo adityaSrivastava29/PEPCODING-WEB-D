@@ -1,1 +1,2 @@
-## WebDevelopement Learning Repository
+## WebDevelopment Learning Repository
+
