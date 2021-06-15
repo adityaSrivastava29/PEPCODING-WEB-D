@@ -62,8 +62,10 @@ function processLeaderboard(teamName , batsmanName , runs , balls , fours , sixe
     fours = Number(fours);
     sixes = Number(sixes);
     // check if the batsman is already present in lb
+   
     for(let i=0 ; i<leaderboard.length ; i++){
         let lbObject = leaderboard[i];
+       
         if(lbObject.Team == teamName  && lbObject.Batsman == batsmanName){
             lbObject.Runs += runs; 
             lbObject.Balls += balls;

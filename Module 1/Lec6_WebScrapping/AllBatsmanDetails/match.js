@@ -75,7 +75,7 @@ function processHTML(html){
 }
 
 function checkTeamFolder(teamName){
-    let teamFolderPath = `./IPL/${teamName}`;
+    let teamFolderPath = `./IPL/${teamName}`; 
     return fs.existsSync(teamFolderPath);
 }
 
@@ -123,6 +123,7 @@ function updateBatsmanFile(teamName , batsmanName , runs , balls , fours , sixes
 
 
 function  processDetails(teamName , batsmanName , runs , balls , fours , sixes , strikeRate){
+    
     let isTeamFolderExist = checkTeamFolder(teamName);
     // Falsy value => false , "" , 0 , null , undefined , NAN 
     if(isTeamFolderExist){
