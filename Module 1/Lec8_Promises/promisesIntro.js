@@ -3,7 +3,7 @@ const fs = require("fs");
 
 // file system => it also gives promisified functions
    // B               // A
-let pendingPromise = fs.promises.readFile("./f12.txt"); // fs ke promise object
+let pendingPromise = fs.promises.readFile("./f12.txt");
 // Promise<Pending>
 console.log(pendingPromise);
 
