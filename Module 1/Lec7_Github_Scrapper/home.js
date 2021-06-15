@@ -16,7 +16,7 @@ function processHTML(html) {
     let oneTopicATag = ch(allTopicATags[i]);
     let oneTopicLink = "https://www.github.com" + oneTopicATag.attr("href");
     let oneTopicName = oneTopicATag.find(".f3").text().trim();
-    allTopicInfo.push({ topicName: oneTopicName, topicLink: oneTopicLink });
+    allTopicInfo.push({ topicName: oneTopicName, topicLink: oneTopicLink }); //object push
     // create topic folder
     let topicFolderPath = `./Github/${oneTopicName}`;
     if(!fs.existsSync(topicFolderPath)){

@@ -21,14 +21,16 @@ function processHTML(html , topicName){
         let oneProjectATag = ch(allProjectATags[i]);
         let projectLink = "https://www.github.com"+oneProjectATag.attr("href");
         let projectIssuesLink = projectLink+"/issues";
+        console.log(projectIssuesLink);
         let projectName= projectLink.split("/").pop();
-        allProjectInfo.push( { projectName , projectLink , projectIssuesLink  }  );
+        allProjectInfo.push( { projectName , projectLink , projectIssuesLink  }  ); //object push
     }
     
 
     for(let i=0 ; i<allProjectInfo.length ; i++){
         let {projectName , projectIssuesLink} = allProjectInfo[i];
         let projectPath = `./Github/${topicName}/${projectName}`;
+       
         // it will create a project folder
         if(!fs.existsSync(projectPath)){
             fs.mkdirSync(projectPath);

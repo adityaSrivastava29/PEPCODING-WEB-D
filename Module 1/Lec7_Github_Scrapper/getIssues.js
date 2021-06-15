@@ -14,8 +14,9 @@ function processHTML(html, projectPath) {
   let allIssues = [];
   for (let i = 0; i < 10; i++) {
     let oneIssue = ch(allIssuesATag[i]);
-    let issueName = oneIssue.text().trim();
-    let issueLink =  "https://www.github.com"+oneIssue.attr("href");
+    let issueName = oneIssue.text().trim(); // extra space
+    
+    let issueLink =  "https://www.github.com"+oneIssue.attr("href"); 
     allIssues.push({ issueName, issueLink });
   }
   fs.writeFileSync(`${projectPath}/issues.json`, JSON.stringify(allIssues));
