@@ -1,6 +1,6 @@
 const puppeteer = require("puppeteer");
-const id ="8423690841";
-const pw = "8948362873";
+const id ="";
+const pw = "";
 let tab;
 // puppeteer functions => promisifed functions
 
