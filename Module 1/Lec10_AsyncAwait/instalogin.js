@@ -17,7 +17,7 @@ const pw = "qwerty@123";
         await tab.type('input[name="username"]', id);
         await tab.type('input[name="password"]', pw);
         await tab.click('button[type="submit"]');
-       await tab.goto("https://www.instagram.com/pepcoding/");
+       //await tab.goto("https://www.instagram.com/pepcoding/");
         //await tab.click('button.sqdOP.yWX7d.y3zKF');
         console.log("Successfull");
     }
