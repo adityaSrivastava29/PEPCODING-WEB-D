@@ -1,0 +1,119 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif; 
+    /* body me styling ka effect sare jagah reflect hoga */
+}
+
+.container{
+    height: 100vh;
+    /* background-color: aqua; */
+}
+/* it will take height percentage of its parent. */
+.title-section{
+    height: 4%;
+    background-color: #27ae60;
+    /* //horizontal  center mein aata hai 
+    text-align: center;*/
+   display:flex;
+    justify-content: center;
+    align-items: center;
+   
+    color: white;
+    outline: none;
+
+}
+.menu-bar-section{
+    height: 4%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    
+
+}
+.menu-bar-section div{
+    margin-left: 20px;
+    color:  black;
+}
+.menu-options-section{
+    height: 8%;
+    background-color: #2ecc71;
+}
+.formula-section{
+    height: 4%;
+    display: flex;
+}
+
+.formula-section .selected-cell-div{
+    height: 100%;
+    width: 20%;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.formula-section input{
+    display: block;
+    width: 80%;
+    height: 100%;
+    /* Done need border and outline */
+    border: 1px solid;
+    outline: none;
+}
+.grid{
+    height: 76%;
+    overflow:auto;
+}
+
+.blank-corner {
+    height: 30px;
+    width: 30px;
+    z-index: 2;
+    position: fixed;
+    top: 20vh;
+    background-color: gray;
+  }
+  .row-number-section {
+    display: inline-block;
+  }
+
+  .row-number {
+    height: 30px;
+    width: 30px;
+    background-color:  #27ae60;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+  }
+  .column-tag-section {
+    height: 30px;
+    position: fixed;
+    background: #27ae60;
+    display: flex;
+    top: 20vh;
+    width: 100vw;
+    left: 30px;
+  }
+
+  .column-tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    flex-shrink: 0;
+    height: 30px;
+    background-color: #27ae60;
+    border: none;
+    border-right: 1px solid;
+    color: white;
+  } 
+
+.sheets-section{
+    height: 4%;
+    background-color:  #2ecc71;
+}
