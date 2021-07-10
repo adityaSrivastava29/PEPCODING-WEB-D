@@ -22,3 +22,35 @@ for(let i = 0;i<26;i++){
 
 }
 
+
+let cellSection = document.querySelector(".cell-section")
+
+for (let i = 1; i <= 100; i++) {
+  let rowDiv = document.createElement("div");
+  rowDiv.classList.add("row");
+                       //i = 1 [A1,B1..........Z1]
+                       //i = 2 []
+                       //.
+                       //.
+                       //i = 100 [A100.........z100]
+
+  for (let j = 0; j < 26; j++) {       //i = 100   j = 25  asciiCode = 65+25=90  alpha = z  cellAdd = Z100
+    // A to Z
+    let asciiCode = 65 + j;
+
+    let reqAlphabet = String.fromCharCode(asciiCode);
+
+    let cellAddress = reqAlphabet + i;
+
+    let cellDiv = document.createElement("div");
+
+    cellDiv.classList.add("cell");
+
+    cellDiv.setAttribute("data-address", cellAddress);
+    rowDiv.append(cellDiv);
+  }
+
+  cellSection.append(rowDiv)
+
+}
+
