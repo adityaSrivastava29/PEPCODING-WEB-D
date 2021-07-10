@@ -10,24 +10,46 @@
       box-sizing: border-box;
     }
   body{
-      position:fixed;
+      margin: 0;
       height: 100vh;
       width: 100vw;
-      display: flex;
+      /* display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: center; */
       background-color: beige;
   }
   .container{
-         height: 20rem;
-         width: 20rem;
-        display: flex;  
-       
-            border: 2px solid;
+    height: 20rem;
+        width: 20rem;
+        background-color: indianred;
+        position: fixed;
+        top: 50vh;
+        left: 50vw;
+        transform: translate(-50%, -50%);
+  }
+.box1,.box2,.box3{
+    height: 10rem;
+        width: 10rem;
+        position: fixed;
+}
+.box1{
+    left: 0;
+        top: 0;
+        background-color: indigo;
+}
+.box3{
+    bottom: 0;
+        right: 0;
+        background-color: lawngreen;
+}
+  .box2{
+    background-color: blue;
+        top: 10rem;
+        left: 10rem;
+        transform: translate(-50%, -50%);
   }
 
-
-  .box1{
+  /* .box1{
       height:10rem;
       width: 10rem;
       flex-shrink: 0;
@@ -51,7 +73,7 @@
       position: relative;
       left: -10rem;
       top: 10rem;
-  }
+  } */
 
     </style>
 </head>
