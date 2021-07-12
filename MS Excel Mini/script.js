@@ -2,7 +2,17 @@ let rowNumberSection = document.querySelector(".row-number-section");
 
 let formulaBarSelectedCellArea = document.querySelector(".selected-cell-div");
 
+let cellSection = document.querySelector(".cell-section");
+let columnTagsSection = document.querySelector(".column-tag-section");
+
 let lastCell;
+
+cellSection.addEventListener("scroll", function (e) {
+  rowNumberSection.style.transform = `translateY(-${e.currentTarget.scrollTop}px)`;
+
+  columnTagsSection.style.transform = `translateX(-${e.currentTarget.scrollLeft}px)`; 
+  //console.log("Scrolling");
+});
 
 for (let i = 1; i <= 100; i++) {
   let div = document.createElement("div");
@@ -10,8 +20,6 @@ for (let i = 1; i <= 100; i++) {
   div.classList.add("row-number");
   rowNumberSection.append(div);
 }
-
-let columnTagsSection = document.querySelector(".column-tag-section");
 
 for (let i = 0; i < 26; i++) {
   let asciiCode = 65 + i;
@@ -23,8 +31,6 @@ for (let i = 0; i < 26; i++) {
   div.classList.add("column-tag");
   columnTagsSection.append(div);
 }
-
-let cellSection = document.querySelector(".cell-section");
 
 for (let i = 1; i <= 100; i++) {
   let rowDiv = document.createElement("div");
@@ -63,13 +69,9 @@ for (let i = 1; i <= 100; i++) {
 
       lastCell = e.currentTarget;
 
+      let currCellAddress = e.currentTarget.getAttribute("data-address");
 
-
-      let currCellAddress = e.currentTarget.getAttribute("data-address")
-
-      formulaBarSelectedCellArea.innerText = currCellAddress
-
-
+      formulaBarSelectedCellArea.innerText = currCellAddress;
     });
 
     rowDiv.append(cellDiv);

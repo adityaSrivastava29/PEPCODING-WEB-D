@@ -50,6 +50,7 @@
     display: flex;
     justify-content: center;
     border: 1px solid;
+    background-color: white;
     align-items: center;
   }
   
@@ -86,6 +87,7 @@
     position: fixed;
     top: calc(20vh + 30px);
     left: 0;
+    z-index: -10;
   }
   
   .row-number {
@@ -107,6 +109,7 @@
     top: 20vh;
     left: 30px;
     display: flex;
+    z-index: -10;
   }
   
   .column-tag {
