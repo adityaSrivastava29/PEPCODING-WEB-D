@@ -20,7 +20,8 @@
     align-items: center;
     color: white;
   }
-  
+   /* //horizontal  center mein aata hai 
+    text-align: center;*/
   .menu-bar-section {
     height: 4%;
     background-color: white;
@@ -124,10 +125,12 @@
   .cell-section {
     height: calc(76vh - 30px);
     width: calc(100vw - 30px);
+      /* calc(100vh -(24vh+30px)) */
     position: absolute;
     top: 30px;
     left: 30px;
     overflow: auto;
+    
   }
   
   
@@ -136,8 +139,11 @@
     height: 30px;
     border: 1px solid;
     flex-shrink: 0;
+    outline: none;
   }
-  
+  .cell-selected{
+    border: 2px solid rgb(60, 60, 218);
+  }
   .row{
     display: flex;
   }
