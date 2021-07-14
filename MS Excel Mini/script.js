@@ -6,6 +6,8 @@ let cellSection = document.querySelector(".cell-section");
 let columnTagsSection = document.querySelector(".column-tag-section");
 
 let lastCell;
+let dataObj = {};
+
 
 cellSection.addEventListener("scroll", function (e) {
   rowNumberSection.style.transform = `translateY(-${e.currentTarget.scrollTop}px)`;
@@ -13,6 +15,9 @@ cellSection.addEventListener("scroll", function (e) {
   columnTagsSection.style.transform = `translateX(-${e.currentTarget.scrollLeft}px)`; 
   //console.log("Scrolling");
 });
+
+
+//inside this nested for loop we are creating individual cells UI + cell obj
 
 for (let i = 1; i <= 100; i++) {
   let div = document.createElement("div");
@@ -52,8 +57,27 @@ for (let i = 1; i <= 100; i++) {
 
     let cellDiv = document.createElement("div");
 
-    // cellDiv.contentEditable = true
 
+    dataObj[cellAddress] = {
+      value: undefined,
+      formula: undefined,
+      upstream: [],
+      downstream: [],
+    };
+
+   
+     cellDiv.addEventListener("input", function (e) {
+      // jis cell pr type kra uske attribute se maine uska cell address fetch kra
+      let currCellAddress = e.currentTarget.getAttribute("data-address");
+      //kuki sare cell objects dataObj me store ho rakhe h using their cell address as key
+      //maine jis cell pr click krke type kra uska hi address fetch and uska hi object chahiye
+      //to wo address as key use krke dataObj se fetch krlia req cellObj ko
+      let currCellObj = dataObj[currCellAddress];
+
+      currCellObj.value = e.currentTarget.innerText;
+      console.log(currCellObj);
+    });
+   // cellDiv.contentEditable = true
     cellDiv.setAttribute("contentEditable", true);
 
     cellDiv.classList.add("cell");
