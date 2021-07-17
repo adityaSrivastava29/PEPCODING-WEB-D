@@ -2,12 +2,42 @@ let rowNumberSection = document.querySelector(".row-number-section");
 
 let formulaBarSelectedCellArea = document.querySelector(".selected-cell-div");
 
+let formulaInput = document.querySelector(".formula-input-section");
+
 let cellSection = document.querySelector(".cell-section");
 let columnTagsSection = document.querySelector(".column-tag-section");
 
 let lastCell;
 //global Object
 let dataObj = {};
+
+formulaInput.addEventListener("keydown", function (e) {
+  if (e.key == "Enter") {
+    console.log("now evaluating formula");
+
+    let typedFormula = e.currentTarget.value;
+    console.log(typedFormula);
+
+    if (!lastCell) 
+    return;
+
+    console.log("not returned");
+
+    let selectedCellAdd = lastCell.getAttribute("data-address");
+    
+    let cellObj = dataObj[selectedCellAdd];
+
+    cellObj.formula = typedFormula;
+
+    let upstream = cellObj.upstream;
+
+    for (let k = 0; k < upstream.length; k++) {
+      removeFromDownstream(upstream[k], selectedCellAdd);
+    }
+
+    currCellObj.upstream = [];
+  }
+});
 
 
 cellSection.addEventListener("scroll", function (e) {
