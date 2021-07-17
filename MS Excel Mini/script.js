@@ -104,7 +104,7 @@ for (let i = 1; i <= 100; i++) {
       }
 
 
-
+      dataObj[currCellAddress] = currCellObj;
 
 
       console.log(currCellObj);
@@ -136,6 +136,21 @@ for (let i = 1; i <= 100; i++) {
 
   cellSection.append(rowDiv);
 }
+
+dataObj["A1"].value = 20;
+dataObj["A1"].downstream = ["B1"];
+dataObj["B1"].formula = "2 * A1";
+dataObj["B1"].upstream = ["A1"];
+dataObj["B1"].value = 40;
+
+let a1cell = document.querySelector("[data-address='A1']")
+let b1cell = document.querySelector("[data-address='B1']")
+
+a1cell.innerText = 20
+b1cell.innerText = 40
+
+
+
 
 // C1 = Formula(2*A1)
 // A1 = parent
@@ -192,6 +207,7 @@ function updateCell(cell){
       let cellValue =  dataObj[upstream[i]].value
 
       valObj[upstream[i]] = cellValue
+    
   }
 
 //a1 + b1
@@ -203,5 +219,7 @@ for(let key in valObj){
 //20 + 10
 
 let newValue = eval(formula)
+let cellOnUi = document.querySelector(`[data-address='${cell}']`);
+  cellOnUi.innerText = newValue;
 
 } 
